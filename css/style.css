@@ -1,17 +1,19 @@
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
-.header {
-    background-image: url("pictures/levandule.jpg");
+
+.header-bg {
+  position: absolute;
+  background-color: #ca8a04;
+  /* background-image: url("pictures/levandule.jpg"); */
+  background-image: url(../pictures/levandule.jpg);
   /* Add the blur effect */
-  /* filter: blur(8px); */
+  filter: blur(3px);
   /* -webkit-filter: blur(8px); */
 
-  /* Full height */
-  height: 100%;
-
+  width: 100%;
+  z-index: -1;
   /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+  /* background-position: center; */
   background-size: cover;
 }
