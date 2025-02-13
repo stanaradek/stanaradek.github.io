@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class="header-bg p-10 py-10 pt-40 text-center text-green-800">
+  <!-- <div class="header-bg p-10 py-10 pt-40 text-center text-green-800">
     <h1 class="text-3xl">
       Stáňa a Radek
     </h1>
@@ -19,17 +19,25 @@
     <button class="mt-10 bg-yellow-800 hover:bg-yellow-700 text-white py-2 px-4">
       Chci se zúčastnit
     </button>
-  </div>
-  <div class="p-10 py-10 pt-40 text-center text-blue-100">
-    <h1 class="text-3xl">
-      Stáňa a Radek
-    </h1>
+  </div> -->
+  <div class="sky p-10 py-10 pt-40 text-center">
+    <div>
+      <h1 class="text-3xl">
+        Stáňa a Radek
+      </h1>
     <div>se berou</div>
     <p class="text-2xl">21.6.2025</p>
-    <button class="mt-10 bg-yellow-800 hover:bg-yellow-700 text-white py-2 px-4">
+    <button class="form-button mt-10 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
       Chci se zúčastnit
     </button>
+    </div>
+    <div class="sun">
+      <img src="pictures/slunce.png" />
+    </div>
   </div>
+  <!-- <img src="pictures/kytka1.png" /> -->
+  <!-- <img src="pictures/kytka2.png" /> -->
+  <!-- <img src="pictures/kytka3.png" /> -->
   <div class="bg-orange-300 py-10 flex justify-center">
     <div class="container text-orange-900 text-center flex">
       <div class="text-left flex flex-wrap mx-auto">
@@ -49,6 +57,38 @@
       </div>
     </div>
   </div>
+
+    <script>
+        function startAnimation() {
+            
+            let sky = document.querySelector('.sky');
+            sky.style.backgroundColor = "white";
+            document.querySelector(".form-button").style.opacity = "1";
+            let sun = document.querySelector('.sun');
+            let startTime = null;
+            const duration = 15000;
+            sun.style.display = "block"
+            
+            function animateSun(time) {
+                if (!startTime) startTime = time;
+                let progress = (time - startTime) / duration;
+                if (progress > 1) progress = 1;
+                
+                let x = (window.innerWidth / 2) * (1 - Math.cos(progress * Math.PI)) - window.innerWidth;
+                let y = (window.innerHeight / 2) * (1 - Math.cos(progress * Math.PI));
+                
+                sun.style.transform = `translate(${x}px, ${window.innerHeight - y - 200}px)`;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animateSun);
+                }
+            }
+            requestAnimationFrame(animateSun);
+        }
+
+        window.onload = startAnimation;
+        //window.onresize = startAnimation;
+    </script>
 </body>
 
 </html>
