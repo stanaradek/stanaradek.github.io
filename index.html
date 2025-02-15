@@ -10,43 +10,42 @@
 </head>
 
 <body>
-  <!-- <div class="header-bg p-10 py-10 pt-40 text-center text-green-800">
-    <h1 class="text-3xl">
-      Stáňa a Radek
-    </h1>
-    <div>se berou</div>
-    <p class="text-2xl">21.6.2025</p>
-    <button class="mt-10 bg-yellow-800 hover:bg-yellow-700 text-white py-2 px-4">
-      Chci se zúčastnit
-    </button>
-  </div> -->
   <div class="sky p-10 py-10 pt-40 text-center">
     <div>
-      <h1 class="text-3xl">
+      <h1>
         Stáňa a Radek
       </h1>
-    <div>se berou</div>
-    <p class="text-2xl">21.6.2025</p>
+    <p class="subtitle">se berou</p>
+    <p class="subtitle">21.6.2025</p>
     <button class="form-button mt-10 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
       Chci se zúčastnit
     </button>
+    <p><a href="#info">informace </a></p>
     </div>
     <div class="sun">
-      <img src="pictures/slunce.png" />
+      <img src="pictures/slunce3.png" />
     </div>
   </div>
   <!-- <img src="pictures/kytka1.png" /> -->
   <!-- <img src="pictures/kytka2.png" /> -->
   <!-- <img src="pictures/kytka3.png" /> -->
-  <div class="bg-orange-300 py-10 flex justify-center">
-    <div class="container text-orange-900 text-center flex">
+  <div id="info" class="bg-blue-900 py-10 flex justify-center">
+    <div class="text-white">
+      Svatební dary preferujeme peněžité.
+      <br />
+      Domácnost již máme vybavenou.
+    </div>
+    <div>QR</div>
+  </div>
+  <div class=" py-10 flex justify-center">
+    <div class="container text-blue-900 text-center flex">
       <div class="text-left flex flex-wrap mx-auto">
-        <div class="p-5 m-3 border-solid border-2 border-white w-full">
+        <div class="p-5 m-3 border-solid border-2 border-blue w-full">
           <strong>Obřad:</strong>
           <p class="px-10">12:00</p>
           <p class="px-10">Městský úřad Bechyně</p>
         </div>
-        <div class="p-5 m-3 border-solid border-2 border-white w-full">
+        <div class="p-5 m-3 border-solid border-2 border-blue w-full">
           <strong>Hostina:</strong>
           <p class="px-10">14:00</p>
           <p class="px-10">Čihovice 30, Týn nad Vltavou</p>
@@ -56,6 +55,7 @@
         </div>
       </div>
     </div>
+  <img src="pictures/kytka3.png" />
   </div>
 
     <script>
@@ -66,15 +66,16 @@
             document.querySelector(".form-button").style.opacity = "1";
             let sun = document.querySelector('.sun');
             let startTime = null;
-            const duration = 15000;
-            sun.style.display = "block"
+            const duration = 10000;
+            // sun.style.display = "block"
+            sun.style.opacity = "1";
             
             function animateSun(time) {
                 if (!startTime) startTime = time;
-                let progress = (time - startTime) / duration;
+                let progress = 0.5 + (time - startTime) / (duration * 2);
                 if (progress > 1) progress = 1;
                 
-                let x = (window.innerWidth / 2) * (1 - Math.cos(progress * Math.PI)) - window.innerWidth;
+                let x = (window.innerWidth / 2) * (1 - Math.sin(progress * Math.PI)) - (window.innerWidth / 2);
                 let y = (window.innerHeight / 2) * (1 - Math.cos(progress * Math.PI));
                 
                 sun.style.transform = `translate(${x}px, ${window.innerHeight - y - 200}px)`;
@@ -88,6 +89,18 @@
 
         window.onload = startAnimation;
         //window.onresize = startAnimation;
+
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+              });
+    });
+});
+
+
     </script>
 </body>
 
