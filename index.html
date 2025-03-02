@@ -15,20 +15,21 @@
       <h1>
         Stáňa a Radek
       </h1>
-    <p class="subtitle">se berou</p>
-    <p class="subtitle">21.6.2025</p>
-    <button class="form-button mt-10 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
-      Chci se zúčastnit
-    </button>
-    <p><a href="#info">informace </a></p>
+      <p class="subtitle">se berou</p>
+      <p class="subtitle">21.6.2025</p>
+      <div class="header-content">
+        <a href="https://forms.gle/Ya3VnJoE8miUmbgP6">
+          <button class="mt-10 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
+            Chci se zúčastnit
+          </button>
+        </a>
+        <p><a href="#info">informace </a></p>
+      </div>
     </div>
     <div class="sun">
       <img src="pictures/slunce3.png" />
     </div>
   </div>
-  <!-- <img src="pictures/kytka1.png" /> -->
-  <!-- <img src="pictures/kytka2.png" /> -->
-  <!-- <img src="pictures/kytka3.png" /> -->
   <div id="info" class="bg-blue-900 py-10 flex justify-center">
     <div class="text-white">
       Svatební dary preferujeme peněžité.
@@ -38,12 +39,18 @@
     <div>QR</div>
   </div>
   <div class=" py-10 flex justify-center">
-    <div class="container text-blue-900 text-center flex">
+    <div class="container text-blue-900 text-center flex max-w-5xl">
       <div class="text-left flex flex-wrap mx-auto">
         <div class="p-5 m-3 border-solid border-2 border-blue w-full">
-          <strong>Obřad:</strong>
-          <p class="px-10">12:00</p>
-          <p class="px-10">Městský úřad Bechyně</p>
+          <div class="flex flex-wrap">
+            <div class="flex-grow">
+              <strong>Obřad:</strong>
+              <p class="px-10">12:00</p>
+              <p class="px-10">Obřadní síň městského úřadu v Bechyni</p>
+              <p class="px-10">Dole na náměstí za parkem</p>
+            </div>
+            <img class="m-auto" class="flex-none" src="pictures/kytka1sm.png" />
+          </div>
         </div>
         <div class="p-5 m-3 border-solid border-2 border-blue w-full">
           <strong>Hostina:</strong>
@@ -53,9 +60,45 @@
           <iframe class="w-full" style="border:none" src="https://en.frame.mapy.cz/s/ducupacefa" height="280"
             frameborder="0"></iframe>
         </div>
+        <div class="p-5 m-3 border-solid border-2 border-blue w-full">
+          <div class="flex flex-wrap">
+            <div class="flex-grow sm:w-0">
+              <strong>Program:</strong>
+              <p>( Zatím jen orientačně )</p>
+              <p class="px-10 pt-2"> 14:00 - Přípitek </p>
+              <p class="px-10"> 14:30 - Společná polévka, následovaná rautem </p>
+              <p class="px-10"> 17:00 - Losování tomboly </p>
+              <p class="px-10">18:00 - Koncert Mulisi Mulisi</p>
+            </div>
+            <div class="m-auto">
+              <img class="flex-none" src="pictures/kytka2sm.png" />
+            </div>
+          </div>
+        </div>
+        <div class="p-5 m-3 border-solid border-2 border-blue w-full">
+          <div class="flex flex-wrap">
+            <div class="flex-grow sm:w-0">
+              <strong>Ubytování:</strong>
+              <p class="px-10 py-2">
+                Ubytování na louce vedle statku, ve stanu nebo pod širákem je zdarma.
+              </p>
+              <p class="px-10 py-2">
+                Je možné si objednat <a href="https://www.dvurcihovice.cz/ubytovani/">ubytování</a> přímo na statku na
+                telefoním
+                čísle <a href="tel:774709103">774 709 103</a>.
+              </p>
+            </div>
+            <div class="m-auto">
+              <img class="flex-none" src="pictures/kytka3sm.png" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  <img src="pictures/kytka3.png" />
+  </div>
+  <div class="text-center pb-10">
+    <p>Těšíme se na vás</p>
+    <p>Stáňa a Radek</p>
   </div>
 
     <script>
@@ -63,7 +106,7 @@
             
             let sky = document.querySelector('.sky');
             sky.style.backgroundColor = "white";
-            document.querySelector(".form-button").style.opacity = "1";
+            document.querySelector(".header-content").style.opacity = "1";
             let sun = document.querySelector('.sun');
             let startTime = null;
             const duration = 10000;

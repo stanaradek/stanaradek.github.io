@@ -18,8 +18,16 @@ h1 {
   font-size: 3rem;
   font-weight: normal;
 }
+
+a {
+  color:#5d5d97
+}
+a:hover {
+  text-decoration: underline;
+}
+
 .subtitle {
-  font-family: svatba-title, sherif;
+  font-family: svatba-title, serif;
 }
 .main {
   color: #5d5d97
@@ -39,7 +47,7 @@ h1 {
   background-size: cover;
 }
 
-.form-button {
+.header-content {
   opacity: 0;
   transition: opacity 10s linear;
 }
