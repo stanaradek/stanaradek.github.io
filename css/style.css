@@ -18,19 +18,24 @@ h1 {
   font-size: 3rem;
   font-weight: normal;
 }
-
 a {
-  color:#5d5d97
-}
-a:hover {
+  color: #3e7cd2;
   text-decoration: underline;
 }
+a.top {
+  color:#5d5d97;
+  text-decoration: none;
+}
+/* a:hover {
+  text-decoration: none;
+}
+*/
+a.top:hover {
+  text-decoration: underline;
+} 
 
 .subtitle {
   font-family: svatba-title, serif;
-}
-.main {
-  color: #5d5d97
 }
 
 .header-bg {

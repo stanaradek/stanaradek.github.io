@@ -18,28 +18,31 @@
       <p class="subtitle">se berou</p>
       <p class="subtitle">21.6.2025</p>
       <div class="header-content">
-        <!-- <a href="https://forms.gle/Ya3VnJoE8miUmbgP6"> -->
-        <a href="#">
+        <a href="https://forms.gle/Ya3VnJoE8miUmbgP6">
           <button class="mt-10 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
             Chci se zúčastnit
           </button>
         </a>
-        <p><a href="#info">informace </a></p>
+        <p><a class="top" href="#info">informace </a></p>
       </div>
     </div>
     <div class="sun">
       <img src="pictures/slunce3.png" />
     </div>
   </div>
-  <div id="info" class="bg-blue-900 py-10 flex justify-center">
-    <div class="text-white">
+  <div id="info" class="bg-blue-900 flex justify-center">
+    <div class="container flex max-w-5xl">
+    <div class="text-white m-auto px-2">
       Svatební dary preferujeme peněžité.
       <br />
       Domácnost již máme vybavenou.
     </div>
-    <div>QR</div>
+    <div>
+      <img class="p-2" src="pictures/qr.png" />
+    </div>
+</div>
   </div>
-  <div class=" py-10 flex justify-center">
+  <div class="py-10 flex justify-center">
     <div class="container text-blue-900 text-center flex max-w-5xl">
       <div class="text-left flex flex-wrap mx-auto">
         <div class="p-5 m-3 border-solid border-2 border-blue w-full">
@@ -97,18 +100,17 @@
       </div>
     </div>
   </div>
-  <div class="text-center pb-10">
+  <div class="text-blue-900 text-center pb-10">
     <p>Těšíme se na vás</p>
     <p>Stáňa a Radek</p>
   </div>
 
     <script>
+        const sun = document.querySelector('.sun');
         function startAnimation() {
-            
-            let sky = document.querySelector('.sky');
+            const sky = document.querySelector('.sky');
             sky.style.backgroundColor = "white";
             document.querySelector(".header-content").style.opacity = "1";
-            let sun = document.querySelector('.sun');
             let startTime = null;
             const duration = 10000;
             // sun.style.display = "block"
@@ -130,8 +132,13 @@
             }
             requestAnimationFrame(animateSun);
         }
-
-        window.onload = startAnimation;
+        const sunImg = sun.children[0]
+        if (sunImg.complete) {
+          startAnimation()
+        } else {
+          sunImg.addEventListener('load', startAnimation)
+        }
+        // window.onload = startAnimation;
         //window.onresize = startAnimation;
 
           document.querySelectorAll('a[href^="#"]').forEach(anchor => {
