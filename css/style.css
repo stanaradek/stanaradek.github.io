@@ -57,6 +57,15 @@ a.top:hover {
   transition: opacity 10s linear;
 }
 
+.program b {
+  font-weight: normal;
+}
+.qr-arrow {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+}
+
 .sky {
   /* position: absolute; */
   top: 0;
