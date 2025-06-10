@@ -10,6 +10,34 @@
 </head>
 
 <body>
+        <dialog id="uvodni-dialog" closeby="any" style="padding:0; border-radius:12px;">
+          <div class="dialog-header" style="position:sticky; top:0; background:white; z-index:2; padding:1rem 1.5rem; font-weight:bold; border-bottom:1px solid #eee;">
+            Úvodní info
+          </div>
+          <div class="content" style="overflow-y:auto; padding:1.5rem;">
+          <p class="text-left">
+            Ahoj naši milí hosté,
+          </p><p class="text-left">
+rádi bychom Vám připomněli některé důležité věci, které se týkají naší svatby. Ta nejdůležitější je náš web (stanaradek.cz), kam se prosím průběžně koukejte. Všechny informace naleznete tam. TAK PROSÍM ČTĚTE A INFORMUJTE SE!!!!!!
+          </p><p class="text-left">
+K průběhu obřadu... Sejdeme se 21.6.2025 ve 12:00 před obřadní síní Městského úřadu Bechyně. Pokud chcete přijet autem, berte v úvahu, že na náměstí se parkování platí a že není možné parkovat před obřadní síní. Potřebujeme tam místo, tak tam prosím neparkujte. Během svatebního obřadu prosím NEFOŤTE ani nepořizujte videa. Ideálně nechte mobil vypnutý a fotoaparáty sebou vůbec neberte (kromě Václava Kupského, který během obřadu pár fotek pořídí. Ty pak budou pro zájemce k dispozici).
+          </p><p class="text-left">
+Po obřadu si uděláme společnou fotku v parku před obřadní síní. Pak bude rozchod, který ideálně využijte k tomu, abyste se dostali do Čihovic, kde bude hostina. Sraz v Čihovicích je v 14.00. Buďte tam prosím včas, protože již v toto hodinu promluví světci, aby celou akci zahájili přípitkem. Kdo přijde pozdě, ten si neťukne (pokud to nebudou světci, protože bez nich bychom nemohli začít). Po zahájení prosím usedněte ke stolům. Svá místa najdete pomocí jmenovek umístěných na stolech. Společným jídlem bude pouze polévka, po které bude následovat raut. Ten už bude ve volné atmosféře, takže se můžete se přesunout jinam. A co bude dál se dočtete na našich webovkách. 
+          </p><p class="text-left">
+A ještě důležitá věc pro ty, kdo by chtěli v Čihovicích přespat. Nocleh je možný jen ve stanu, pod širákem nebo v pokoji. Jiné možnosti nejsou. Pokud byste chtěli přespat v pokoji, musíte si to zařídit sami. Informace naleznete na našem webu v sekci Ubytování.
+          </p><p class="text-left">
+Těšíme se a nemůžeme dospat, protože to bude velice zábavná a nanejvýš povznášející událost.
+          </p><p class="text-left">
+Stáňa a Radek alias nevěsta a ženich
+          </p>
+          </div>
+          <div class="dialog-footer" style="position:sticky; bottom:0; background:white; z-index:2; padding:1rem 1.5rem; border-top:1px solid #eee; text-align:right;">
+            <button class="mt-5 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4" onclick="document.getElementById('uvodni-dialog').close()">
+              Zavřít
+            </button>
+          </div>
+        </dialog>
+
   <div class="sky p-10 py-10 pt-40 text-center">
     <div>
       <h1>
@@ -18,12 +46,39 @@
       <p class="subtitle">se berou</p>
       <p class="subtitle">21.6.2025</p>
       <div class="header-content">
-        <!-- <a href="https://forms.gle/Ya3VnJoE8miUmbgP6"> -->
-          <!-- <button class="mt-10 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4"> -->
-            <!-- Chci se zúčastnit -->
-          <!-- </button> -->
-        <!-- </a> -->
-        <p><a class="top" href="#info">informace </a></p>
+        
+        <button onclick="document.getElementById('uvodni-dialog').showModal()" class="mt-5 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
+          Úvodní info
+        </button>
+        <a href="#ubytovani">
+          <button class="mt-5 ml-5 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
+            Ubytování
+          </button>
+        </a>
+        <br />
+        <a href="#obrad">
+          <button class="mt-5 ml-5 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
+            Obřad
+          </button>
+        </a>
+        <a href="#hostina">
+          <button class="mt-5 ml-5 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
+            Hostina
+          </button>
+        </a>
+        <a href="#info">
+        <br />
+          <button class="mt-5 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
+            Svatební dary
+          </button>
+        </a>
+        <a href="faq.html">
+          <button class="mt-5 ml-5 bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4">
+            Otázky a odpovědi 
+          </button>
+        </a>
+         
+        <!-- <p><a class="top" href="#info">informace </a></p> -->
       </div>
     </div>
     <div class="sun">
@@ -47,7 +102,7 @@
   <div class="py-10 flex justify-center">
     <div class="container text-blue-900 text-center flex max-w-5xl">
       <div class="text-left flex flex-wrap mx-auto">
-        <div class="p-5 m-3 border-solid border-2 border-blue w-full">
+        <div id="obrad" class="p-5 m-3 border-solid border-2 border-blue w-full">
           <div class="flex flex-wrap">
             <div class="flex-grow">
               <strong>Obřad:</strong>
@@ -62,7 +117,7 @@
             <img class="m-auto" class="flex-none" src="pictures/kytka1sm.png" />
           </div>
         </div>
-        <div class="p-5 m-3 border-solid border-2 border-blue w-full">
+        <div id="hostina" class="p-5 m-3 border-solid border-2 border-blue w-full">
           <strong>Hostina:</strong>
           <p class="px-10">14:00</p>
           <p class="px-10">Čihovice 30, Týn nad Vltavou</p>
@@ -73,7 +128,7 @@
           <iframe class="w-full" style="border:none" src="https://en.frame.mapy.cz/s/ducupacefa" height="280"
             frameborder="0"></iframe>
         </div>
-        <div class="p-5 m-3 border-solid border-2 border-blue w-full">
+        <div id="program" class="p-5 m-3 border-solid border-2 border-blue w-full">
           <div class="flex flex-wrap">
             <div class="flex-grow sm:w-0 program">
               <strong>Program:</strong>
@@ -91,7 +146,7 @@
             </div>
           </div>
         </div>
-        <div class="p-5 m-3 border-solid border-2 border-blue w-full">
+        <div id="ubytovani" class="p-5 m-3 border-solid border-2 border-blue w-full">
           <div class="flex flex-wrap">
             <div class="flex-grow sm:w-0">
               <strong>Ubytování:</strong>
@@ -164,6 +219,13 @@
 });
 
 
+        // Optional: allow closing dialog by clicking outside or pressing ESC
+        const dialog = document.getElementById('uvodni-dialog');
+        if (dialog) {
+          dialog.addEventListener('click', function(e) {
+            if (e.target === dialog) dialog.close();
+          });
+        }
     </script>
 </body>
 
